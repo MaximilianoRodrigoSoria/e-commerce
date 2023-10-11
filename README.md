@@ -45,5 +45,43 @@ Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
                 |-- application/       # Capa de Aplicación
                 |-- domain/            # Capa de Dominio
                 |-- infrastructure/    # Capa de Infraestructura
+```
 
 
+# Dominio
+
+### Product
+| Atributo        | Tipo              |
+|-----------------|-------------------|
+| id              | Integer           |
+| code            | String            |
+| name            | String            |
+| description     | String            |
+| image           | String            |
+| price           | BigDecimal         |
+| dateCreated     | LocalDateTime      |
+| dateUpdated     | LocalDateTime      |
+| user            | User              |
+
+### User
+
+| Atributo        | Tipo              |
+|-----------------|-------------------|
+| id              | Integer           |
+| username        | String            |
+| firstName       | String            |
+| lastName        | String            |
+| email           | String            |
+| address         | String            |
+| cellphone       | String            |
+| password        | String            |
+| userType        | UserType          |
+| dateCreated     | LocalDateTime      |
+
+
+### UserType
+
+| Valor  | Descripción  |
+|------- |------------- |
+| ADMIN  | Administrador |
+| USER   | Usuario      |

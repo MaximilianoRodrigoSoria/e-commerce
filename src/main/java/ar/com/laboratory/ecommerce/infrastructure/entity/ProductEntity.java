@@ -26,6 +26,6 @@ public class ProductEntity {
     private LocalDateTime dateUpdated;
 
     @ManyToOne
-    private UserEntity userEntity;
+    private UserEntity user;
 
 }

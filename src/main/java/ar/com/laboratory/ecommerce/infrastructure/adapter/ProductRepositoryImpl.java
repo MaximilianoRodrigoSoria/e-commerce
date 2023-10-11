@@ -3,6 +3,9 @@ package ar.com.laboratory.ecommerce.infrastructure.adapter;
 import ar.com.laboratory.ecommerce.application.repository.ProductRepository;
 import ar.com.laboratory.ecommerce.domain.Product;
 import ar.com.laboratory.ecommerce.domain.User;
+import ar.com.laboratory.ecommerce.infrastructure.entity.ProductEntity;
+import ar.com.laboratory.ecommerce.infrastructure.mapper.ProductMapper;
+import ar.com.laboratory.ecommerce.infrastructure.mapper.UserMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,29 +15,33 @@ import org.springframework.stereotype.Repository;
 public class ProductRepositoryImpl implements ProductRepository {
 
     private final  ProductCrudRepository repository;
+    private final ProductMapper productMapper;
+    private final UserMapper userMapper;
+
 
     @Override
     public Iterable<Product> getProducts() {
-        return null;
+        return productMapper.toProducts(repository.findAll());
     }
 
     @Override
     public Iterable<Product> getProductsByUser(User user) {
-        return null;
+        return productMapper.toProducts(repository.findAllByUser(userMapper.toEntity(user)));
     }
 
     @Override
     public Product getProductById(Integer id) {
-        return null;
+        return productMapper.toProduct(repository.findById(id).get());
     }
 
     @Override
     public Product save(Product product) {
-        return null;
+        return productMapper.toProduct(repository.save(productMapper.toEntity(product)));
     }
 
     @Override
     public void deleteProduct(Integer id) {
+        repository.deleteById(id);
 
     }
 }

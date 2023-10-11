@@ -1,4 +1,5 @@
 ![Arquitectura Hexagonal](docs/arquitectura.png)
+
 # Arquitectura Hexagonal (Puertos y Adaptadores)
 
 La arquitectura hexagonal, también conocida como "arquitectura de puertos y adaptadores," es un enfoque de diseño de software que promueve la separación de las preocupaciones y facilita la mantenibilidad, escalabilidad y pruebas de aplicaciones. En esta guía, exploraremos los conceptos clave de la arquitectura hexagonal y cómo implementarla en tus proyectos.
@@ -48,6 +49,20 @@ Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
 ```
 
 
+# Dependencias
+
+| Group ID                        | Version | Artifact                      | Scope   |
+|---------------------------------|---------|--------------------------------|---------|
+| org.springframework.boot        | ![Spring Boot Starter Data JPA](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-data-jpa.svg) | spring-boot-starter-data-jpa |         |
+| org.springframework.boot        | ![Spring Boot Starter Web](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-web.svg) | spring-boot-starter-web |         |
+| org.springframework.boot        | ![Spring Boot DevTools](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-devtools.svg) | spring-boot-devtools | runtime |
+| org.postgresql                 | ![PostgreSQL](https://img.shields.io/maven-central/v/org.postgresql/postgresql.svg) | postgresql | runtime |
+| org.mapstruct                  | ![MapStruct](https://img.shields.io/maven-central/v/org.mapstruct/mapstruct.svg) | mapstruct |         |
+| org.projectlombok              | ![Lombok](https://img.shields.io/maven-central/v/org.projectlombok/lombok.svg) | lombok |         |
+| org.projectlombok              | ![Lombok MapStruct Binding](https://img.shields.io/maven-central/v/org.projectlombok/lombok-mapstruct-binding.svg) | lombok-mapstruct-binding |         |
+| org.springframework.boot        | ![Spring Boot Starter Test](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-test.svg) | spring-boot-starter-test | test    |
+
+
 # Dominio
 
 ### Product
@@ -77,6 +92,7 @@ Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
 | password        | String            |
 | userType        | UserType          |
 | dateCreated     | LocalDateTime      |
+
 
 
 ### UserType

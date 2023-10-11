@@ -2,23 +2,20 @@ package ar.com.laboratory.ecommerce.domain;
 
 
 import ar.com.laboratory.ecommerce.infrastructure.entity.UserEntity;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
-@Table(name = "products")
+
 @Data
-@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String code;
     private String name;
@@ -28,8 +25,11 @@ public class Product {
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
 
-    @ManyToOne
-    private UserEntity userEntity;
+    private UserEntity user;
+
+    public Product(){
+        this.setCode(UUID.randomUUID().toString());
+    }
 
 
 }

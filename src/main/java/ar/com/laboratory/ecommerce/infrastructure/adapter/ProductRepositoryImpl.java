@@ -1,37 +1,40 @@
-package ar.com.laboratory.ecommerce.application.service;
-
+package ar.com.laboratory.ecommerce.infrastructure.adapter;
 
 import ar.com.laboratory.ecommerce.application.repository.ProductRepository;
 import ar.com.laboratory.ecommerce.domain.Product;
 import ar.com.laboratory.ecommerce.domain.User;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Repository;
+
 
 @AllArgsConstructor
-public class ProductService {
+@Repository
+public class ProductRepositoryImpl implements ProductRepository {
 
-    private final ProductRepository productRepository;
+    private final  ProductCrudRepository repository;
 
+    @Override
     public Iterable<Product> getProducts() {
-        return productRepository.getProducts();
+        return null;
     }
 
-
+    @Override
     public Iterable<Product> getProductsByUser(User user) {
-        return productRepository.getProductsByUser(user);
+        return null;
     }
 
-
+    @Override
     public Product getProductById(Integer id) {
-        return productRepository.getProductById(id);
+        return null;
     }
 
-
+    @Override
     public Product save(Product product) {
-        return productRepository.save(product);
+        return null;
     }
 
-
+    @Override
     public void deleteProduct(Integer id) {
-        productRepository.deleteProduct(id);
+
     }
 }

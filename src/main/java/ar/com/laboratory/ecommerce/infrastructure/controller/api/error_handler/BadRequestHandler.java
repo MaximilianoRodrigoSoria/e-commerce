@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class BadRequestHandler {
 
     @ExceptionHandler({IdNotFoundException.class, UsernameNotFoundException.class})
-
     public BaseErrorResponse idNotFound(RuntimeException exception){
         return  ErrorResponse.builder()
                 .message(exception.getMessage())

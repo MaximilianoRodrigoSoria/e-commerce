@@ -8,6 +8,7 @@ import ar.com.laboratory.ecommerce.infrastructure.mapper.ProductMapper;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,24 +25,30 @@ public class ProductRestController {
     private ProductMapper mapper;
 
     @GetMapping("/health")
-    @ApiResponse(responseCode = "200", description = "Successful response", content = @Content(schema = @Schema(implementation = String.class)))
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "For Success", content = @Content(schema = @Schema(implementation = String.class))),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = Exception.class))),
+    })
     public ResponseEntity<String> health(){
         return ResponseEntity
                 .ok()
                 .body("OK");}
     @GetMapping("/products")
-    @ApiResponse(responseCode = "200", description = "Successful response", content = @Content(schema = @Schema(implementation = Product.class)))
-    public ResponseEntity<Iterable<Product>> getProducts(){
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "For Success", content = @Content(schema = @Schema(implementation = ProductResponse.class))),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = Exception.class))),
+    })
+    public ResponseEntity<Iterable<ProductResponse>> getProducts(){
         return  ResponseEntity
                 .ok()
-                .body(productService.getProducts());
+                .body(mapper.toProductsResponses(productService.getProducts()));
     }
     @GetMapping("/{id}")
-    @ApiResponse(responseCode = "200", description = "Successful response", content = @Content(schema = @Schema(implementation = Product.class)))
-    public ResponseEntity<Iterable<Product>> getProduct(@PathVariable Integer id){
+    @ApiResponse(responseCode = "200", description = "Successful response", content = @Content(schema = @Schema(implementation = ProductResponse.class)))
+    public ResponseEntity<Iterable<ProductResponse>> getProduct(@PathVariable Integer id){
         return  ResponseEntity
                 .ok()
-                .body(productService.getProducts());
+                .body(mapper.toProductsResponses(productService.getProducts()));
     }
 
     @PostMapping

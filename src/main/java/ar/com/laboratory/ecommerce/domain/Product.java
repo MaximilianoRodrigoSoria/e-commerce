@@ -1,7 +1,5 @@
 package ar.com.laboratory.ecommerce.domain;
 
-
-import ar.com.laboratory.ecommerce.infrastructure.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

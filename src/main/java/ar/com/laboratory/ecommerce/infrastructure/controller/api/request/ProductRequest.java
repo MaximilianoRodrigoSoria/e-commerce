@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 public class ProductRequest {
-    @Schema(description = "Product code", example = "PROD123")
-    private String code;
+
 
     @Schema(description = "Product name", example = "Sample Product")
     private String name;
@@ -25,10 +24,6 @@ public class ProductRequest {
     @Schema(description = "Price of the product", example = "19.99")
     private BigDecimal price;
 
-    @Schema(description = "Date the product was created", example = "2023-10-11T10:30:00Z")
-    private LocalDateTime dateCreated;
 
-    @Schema(description = "Date the product was last updated", example = "2023-10-11T14:45:00Z")
-    private LocalDateTime dateUpdated;
 
 }

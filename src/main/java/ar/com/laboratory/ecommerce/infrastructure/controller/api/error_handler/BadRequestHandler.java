@@ -4,7 +4,7 @@ package ar.com.laboratory.ecommerce.infrastructure.controller.api.error_handler;
 import ar.com.laboratory.ecommerce.infrastructure.controller.api.response.BaseErrorResponse;
 import ar.com.laboratory.ecommerce.infrastructure.controller.api.response.ErrorsResponse;
 import ar.com.laboratory.ecommerce.infrastructure.util.exceptions.IdNotFoundException;
-import ar.com.laboratory.ecommerce.infrastructure.util.exceptions.UsernameNotFoundException;
+import ar.com.laboratory.ecommerce.infrastructure.util.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class BadRequestHandler {
 
-    @ExceptionHandler({IdNotFoundException.class, UsernameNotFoundException.class})
+    @ExceptionHandler({IdNotFoundException.class, UserNotFoundException.class})
     public BaseErrorResponse idNotFound(RuntimeException exception){
         return  ErrorResponse.builder()
                 .message(exception.getMessage())

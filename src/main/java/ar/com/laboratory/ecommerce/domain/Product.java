@@ -24,7 +24,7 @@ public class Product {
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
 
-    private UserEntity user;
+    private User user;
 
     public Product(){
         this.setCode(UUID.randomUUID().toString());

@@ -3,6 +3,7 @@ package ar.com.laboratory.ecommerce.infrastructure.controller;
 import ar.com.laboratory.ecommerce.application.service.ProductService;
 import ar.com.laboratory.ecommerce.domain.Product;
 import ar.com.laboratory.ecommerce.domain.User;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin/products")
 @Slf4j
+@AllArgsConstructor
 public class ProductController {
     private final ProductService productService;
-
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
 
     @GetMapping("/create")
     public String create(){
@@ -30,7 +28,6 @@ public class ProductController {
     public String saveProduct(Product product){
         log.info("Nombre de producto: {}", product);
         productService.save(product);
-        //return "admin/products/create";
         return "redirect:/admin";
     }
     @GetMapping("/show")

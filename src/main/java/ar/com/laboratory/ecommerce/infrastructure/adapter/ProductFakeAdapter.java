@@ -56,7 +56,7 @@ public class ProductFakeAdapter {
             product.setPrice(new BigDecimal("100.00"));
             product.setDateCreated(LocalDateTime.now());
             product.setDateUpdated(LocalDateTime.now());
-            product.setUser(new UserEntity());  // Asegúrate de crear una instancia de UserEntity válida
+            product.setUser(new User());  // Asegúrate de crear una instancia de UserEntity válida
             return product;
         };
     }

@@ -1,5 +1,11 @@
 ![Arquitectura Hexagonal](docs/arquitectura.png)
 
+# Docker
+
+```sh
+docker run --name haxagonal-ecommerce -e POSTGRES_PASSWORD=1q2w3e4r -d -p 5432:5432 postgres
+```
+
 # Arquitectura Hexagonal (Puertos y Adaptadores)
 
 La arquitectura hexagonal, también conocida como "arquitectura de puertos y adaptadores," es un enfoque de diseño de software que promueve la separación de las preocupaciones y facilita la mantenibilidad, escalabilidad y pruebas de aplicaciones. En esta guía, exploraremos los conceptos clave de la arquitectura hexagonal y cómo implementarla en tus proyectos.

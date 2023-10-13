@@ -48,7 +48,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     public Product save(Product product) {
         product.setDateCreated(LocalDateTime.now());
         product.setDateUpdated(LocalDateTime.now());
-        var user = userRepository.getUserById(1);
+        var user = userRepository.getUserById(1).orElse(null);
         if(Objects.isNull(user)){
             throw new UserNotFoundException(TABLE);
         }
@@ -58,8 +58,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public void deleteProduct(Integer id) {
-        var user = userRepository.getUserById(id);
-        if(Objects.isNull(user)){
+        var product = repository.findById(id).orElse(null);
+        if(Objects.isNull(product)){
             throw new UserNotFoundException(TABLE);
         }
         repository.deleteById(id);

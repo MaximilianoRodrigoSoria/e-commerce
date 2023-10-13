@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Objects;
+import java.util.Optional;
 
 
 @AllArgsConstructor
@@ -23,13 +24,13 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User getUserById(Integer id) {
-        return userMapper.toUser(repository.findById(id).get());
+    public Optional<User> getUserById(Integer id) {
+        return Optional.of(userMapper.toUser(repository.findById(id).get()));
     }
 
     @Override
-    public User save(User user) {
-        return userMapper.toUser(repository.save(userMapper.toEntity(user)));
+    public Optional<User> save(User user) {
+        return Optional.of(userMapper.toUser(repository.save(userMapper.toEntity(user))));
     }
 
     @Override
@@ -41,7 +42,7 @@ public class UserRepositoryImpl implements UserRepository {
         repository.deleteById(id);
     }
     @Override
-    public User update(User user) {
-        return userMapper.toUser(repository.save(userMapper.toEntity(user)));
+    public Optional<User> update(User user) {
+        return Optional.of(userMapper.toUser(repository.save(userMapper.toEntity(user))));
     }
 }

@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface ProductCrudRepository extends CrudRepository<ProductEntity,Integer> {
 
 Iterable<ProductEntity> findAllByUser(UserEntity userEntity);
+ProductEntity findByCode(String code);
 }

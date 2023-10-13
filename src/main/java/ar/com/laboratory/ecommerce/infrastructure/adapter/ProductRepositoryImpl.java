@@ -8,10 +8,14 @@ import ar.com.laboratory.ecommerce.domain.UserType;
 import ar.com.laboratory.ecommerce.infrastructure.entity.ProductEntity;
 import ar.com.laboratory.ecommerce.infrastructure.mapper.ProductMapper;
 import ar.com.laboratory.ecommerce.infrastructure.mapper.UserMapper;
+import ar.com.laboratory.ecommerce.infrastructure.util.exceptions.ProductNotFoundException;
+import ar.com.laboratory.ecommerce.infrastructure.util.exceptions.UserNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
+import java.util.UUID;
 
 
 @AllArgsConstructor
@@ -22,6 +26,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     private final UserRepository userRepository;
     private final ProductMapper productMapper;
     private final UserMapper userMapper;
+    private final static String TABLE = "products";
 
 
     @Override
@@ -44,13 +49,35 @@ public class ProductRepositoryImpl implements ProductRepository {
         product.setDateCreated(LocalDateTime.now());
         product.setDateUpdated(LocalDateTime.now());
         var user = userRepository.getUserById(1);
+        if(Objects.isNull(user)){
+            throw new UserNotFoundException(TABLE);
+        }
         product.setUser(user);
         return productMapper.toProduct(repository.save(productMapper.toEntity(product)));
     }
 
     @Override
     public void deleteProduct(Integer id) {
+        var user = userRepository.getUserById(id);
+        if(Objects.isNull(user)){
+            throw new UserNotFoundException(TABLE);
+        }
         repository.deleteById(id);
+    }
 
+    @Override
+    public Product update(Product product) {
+        var productToUpdate = repository.findByCode(product.getCode());
+        productToUpdate.setDateUpdated(LocalDateTime.now());
+        return productMapper.toProduct(repository.save(productToUpdate));
+    }
+
+    @Override
+    public Product findByCode(String code) {
+        var product = repository.findByCode(code);
+        if(Objects.isNull(product)){
+            throw new ProductNotFoundException(TABLE);
+        }
+        return productMapper.toProduct(product);
     }
 }

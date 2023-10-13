@@ -12,4 +12,5 @@ public interface ProductRepository {
     Product save(Product product);
     void deleteProduct(Integer id);
     Product update(Product product);
+    Product findByCode(String code);
 }

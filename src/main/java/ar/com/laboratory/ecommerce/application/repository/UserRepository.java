@@ -7,4 +7,6 @@ public interface UserRepository {
     User getUserById(Integer id);
     User save(User user);
     void deleteUser(Integer id);
+    User update(User user);
+
 }

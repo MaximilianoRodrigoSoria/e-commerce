@@ -11,5 +11,5 @@ public interface ProductRepository {
     Product getProductById(Integer id);
     Product save(Product product);
     void deleteProduct(Integer id);
-
+    Product update(Product product);
 }

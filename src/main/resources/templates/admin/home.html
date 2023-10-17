@@ -10,6 +10,8 @@
 
   <title>Spring eCommerce</title>
 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Bootstrap core CSS -->
   <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
@@ -21,45 +23,45 @@
 
 <body>
 
-  <div th:insert = "~{admin/template_admin::header}"></div>
+<div th:insert = "~{admin/template_admin::header}"></div>
 
-    <!-- Page Content -->
-    <div class="container">
+<!-- Page Content -->
+<div class="container">
 
-      <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Bienvenido a Spring Ecommerce 2024</h1>
-        <p class="lead">Tu tienda de productos en Línea</p>
-      </header>
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Bienvenido a Spring Ecommerce 2024 <i class="fas fa-heart"></i></h1>
+    <p class="lead">Tu tienda de productos en Línea</p>
+  </header>
 
-      <!-- Page Features -->
-      <div class="row text-center">
+  <!-- Page Features -->
+  <div class="row text-center">
 
-        <div class="col-lg-3 col-md-6 mb-4" th:each="product:${products}" >
-          <div class="card h-100">
-            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-            <div class="card-body">
-              <p class="card-text" th:text="${product.name}">Nombre del producto.</p>
-            </div>
-            <div class="card-footer">
-              <a href="productohome.html" class="btn btn-success">Ver producto</a>
-            </div>
-          </div>
+    <div class="col-lg-3 col-md-6 mb-4" th:each="product:${products}" >
+      <div class="card h-100">
+        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+        <div class="card-body">
+          <p class="card-text" th:text="${product.name}">Nombre del producto.</p>
         </div>
-
+        <div class="card-footer">
+          <a href="productohome.html" class="btn btn-success">Ver producto</a>
+        </div>
       </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
 
-    <!-- Footer -->
-    <div th:insert="~{admin/template_admin::footer}"></div>
+  </div>
+  <!-- /.row -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script th:src="@{vendor/jquery/jquery.min.js}"></script>
-    <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</div>
+<!-- /.container -->
 
-  </body>
+<!-- Footer -->
+<div th:insert="~{admin/template_admin::footer}"></div>
 
-  </html>
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

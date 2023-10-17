@@ -17,6 +17,9 @@
   <!-- Custom styles for this template -->
   <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -34,11 +37,12 @@
   </h1>
 
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a th:href="@{/admin}">Home</a></li>
-    <li class="breadcrumb-item active">Ver Productos</li>
+    <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i></li>
+    <li class="breadcrumb-item"><a th:href="@{/admin}">HOME</a></li>
+    <li class="breadcrumb-item active">PRODUCTOS</li>
   </ol>
 
-  <a class="btn btn-primary" th:href="@{/admin/products/create}" > Crear Producto</a>
+  <a class="btn btn-success" th:href="@{/admin/products/create}" ><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; Crear</a>
   <h2>Productos</h2>
   <table class="table">
     <thead>
@@ -56,10 +60,13 @@
         <td th:text="${product.name}"></td>
         <td th:text="${product.description}"></td>
         <td th:text="${product.price}"></td>
-        <td><a  class="btn btn-warning" th:href="@{/admin/products/edit/{id} (id = ${product.id}) }">Editar</a> </td>
-        <td><a  class="btn btn-danger" th:href="@{/admin/products/delete/{id} (id = ${product.id})  }">Eliminar</a> </td>
+        <td><a  class="btn btn-warning" th:href="@{/admin/products/edit/{id} (id = ${product.id}) }"><i class="fa fa-pencil" aria-hidden="true"></i>
+          &nbsp;Editar</a>
+        </td>
+        <td><a  class="btn btn-danger" th:href="@{/admin/products/delete/{id} (id = ${product.id})  }"><i class="fa fa-trash" aria-hidden="true"></i>
+          &nbsp;Eliminar</a> </td>
 		
-        <td><a  class="btn btn-danger" href="">Inventario</a> </td>
+        <td><a  class="btn btn-info" href=""><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Inventario</a> </td>
       </tr>       
     </tbody>
   </table>

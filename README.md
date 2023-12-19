@@ -20,8 +20,7 @@
 
 <p align="center">
 <br>
-<a href="https://www.sonarsource.com/" target="_blank" rel="noopener noreferrer">
-<img width="50%" height="50%" src="docs/img/sonar.png" alt="Knime"></a></p>
+
 
 ### ⭐ Arquitectura Hexagonal?
 

@@ -1,16 +1,53 @@
+
+<p align="center">
+<a href="https://www.linkedin.com/in/soriamaximilianorodrigo/" target="_blank" rel="noopener noreferrer">
+<img width="100%" height="100%" src="docs/img/banner.gif" alt="Linkedin"></a></p>
+
+
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Sonar-Qube-brightgreen" alt="Knime"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Chat-on%20Discord-7289da.svg?sanitize=true" alt="Chat"></a>
+  <a href="#"><img src="https://img.shields.io/badge/calidad-calidad" alt="ETL"></a>
+
+<p align="center">
+<a href="https://www.linkedin.com/in/soriamaximilianorodrigo/" target="_blank" rel="noopener noreferrer"></a>
+
+
+<br/>
+<br/>
+
+
+<p align="center">
+<br>
+<a href="https://www.sonarsource.com/" target="_blank" rel="noopener noreferrer">
+<img width="50%" height="50%" src="docs/img/sonar.png" alt="Knime"></a></p>
+
+### ⭐ Arquitectura Hexagonal?
+
+La arquitectura hexagonal, también conocida como "arquitectura de puertos y adaptadores," es un enfoque de diseño de software que promueve la separación de las preocupaciones y facilita la mantenibilidad, escalabilidad y pruebas de aplicaciones. En esta guía, exploraremos los conceptos clave de la arquitectura hexagonal y cómo implementarla en tus proyectos.<br>
+
+### ⭐ Curso de Udemy
+
+Estos ejemplo esta dados por el curso de Udemy **Proyecto Ecommerce con Spring Boot y Arquitectura Hexagonal**
+
+
+Link: https://www.udemy.com/course/proyecto-ecommerce-con-spring-boot-y-arquitectura-hexagonal
+
+
+
+#### Objetivo
+
 ![Arquitectura Hexagonal](docs/arquitectura.png)
 
-# Docker
+### ⭐  Docker
 
 ```sh
 docker run --name haxagonal-ecommerce -e POSTGRES_PASSWORD=1q2w3e4r -d -p 5432:5432 postgres
 ```
 
-# Arquitectura Hexagonal (Puertos y Adaptadores)
 
-La arquitectura hexagonal, también conocida como "arquitectura de puertos y adaptadores," es un enfoque de diseño de software que promueve la separación de las preocupaciones y facilita la mantenibilidad, escalabilidad y pruebas de aplicaciones. En esta guía, exploraremos los conceptos clave de la arquitectura hexagonal y cómo implementarla en tus proyectos.
-
-## ¿Qué es la Arquitectura Hexagonal?
+### ⭐  ¿Qué es la Arquitectura Hexagonal?
 
 La arquitectura hexagonal se basa en el principio de que una aplicación se puede dividir en tres capas principales: la capa de dominio, la capa de aplicación y la capa de infraestructura.
 
@@ -20,7 +57,7 @@ La arquitectura hexagonal se basa en el principio de que una aplicación se pued
 
 - **Capa de Infraestructura:** Maneja los detalles técnicos y la interacción con recursos externos, como bases de datos, servicios web, y sistemas externos.
 
-## Principales Características
+### ⭐  Principales Características
 
 La arquitectura hexagonal presenta las siguientes características clave:
 
@@ -30,7 +67,7 @@ La arquitectura hexagonal presenta las siguientes características clave:
 
 - **Reutilización:** La lógica de negocio central se encuentra en la capa de dominio, lo que permite reutilizarla en diferentes interfaces de usuario o canales de comunicación.
 
-## Implementación
+### ⭐  Implementación
 
 Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
 
@@ -42,7 +79,7 @@ Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
 
 4. Usa inyección de dependencias para conectar las capas y asegurarte de que la capa de aplicación pueda acceder a los servicios de infraestructura necesarios.
 
-## Ejemplo de Estructura de Directorios
+### ⭐  Ejemplo de Estructura de Directorios
 
 ```plaintext
 |-- my-app/
@@ -107,3 +144,30 @@ Para implementar la arquitectura hexagonal en tu proyecto, sigue estos pasos:
 |------- |------------- |
 | ADMIN  | Administrador |
 | USER   | Usuario      |
+
+### ⭐ Certificado
+
+
+<p align="center">
+<a href="https://www.udemy.com/certificate/UC-8af58d48-0983-4c1e-95b8-9b854f95c220/" target="_blank" rel="noopener noreferrer">
+<img width="100%" height="100%" src="docs/img/certificado.jpg" alt="Linkedin"></a></p>
+
+> [!NOTE]
+> Puedes entrar al certificado dando clic sobre el la imagen.
+---
+
+<br/>
+
+
+### ⭐ Autor
+<br>
+
+> ‍💻 **Nombre:** Maximiliano Rodrigo Soria
+>
+> 📧 **Email:** MaximilianoRodrigoSoria@gmail.com
+>
+> 🏠 **De:** Florencio Varela, Alpino
+>
+> 💼 **Linkedin:** [SoriaMaximilianoRodrigo](https://www.linkedin.com/in/soriamaximilianorodrigo/)
+>
+> 💬 **Chatear:**  [Inicia un chat](https://wa.me/1127043256) 
